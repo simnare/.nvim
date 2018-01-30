@@ -12,7 +12,7 @@ Plug 'altercation/vim-colors-solarized'
 "Plug 'junegunn/seoul256.vim'
 "Plug 'vim-scripts/xoria256.vim'
 "Plug 'jdkanani/vim-material-theme'
-"Plug 'rakr/vim-one'
+Plug 'rakr/vim-one'
 
 Plug 'godlygeek/tabular'
 Plug 'achimnol/python-syntax'
@@ -153,7 +153,7 @@ autocmd WinEnter * match OverLength /\%81v.\+/
 
 set autowrite
 set autoread
-
+set number
 "I dislike folding.
 set nofoldenable
 
@@ -185,6 +185,7 @@ endif
 
 "vim-airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'one'
 
 "Mundo -- Undo tree visualization
 set undofile
@@ -216,7 +217,7 @@ let g:vimshell_prompt_pattern = '^[a-z_-][a-z0-9_-]\{,31\} [~/][^$ ]* $ '
 "True colors
 if $TERM_PROGRAM == "iTerm.app"
   set termguicolors
-  colorscheme solarized
+  colorscheme one "solarized
   set background=light
 else
   colorscheme material-theme
@@ -241,4 +242,10 @@ let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 
 " Standard fix on js writes
-autocmd bufwritepost *.js silent !standard --fix %
+"autocmd bufwritepost *.js silent !standard --fix %
+
+" Ale settings
+let g:ale_fixers = {
+\   'javascript': ['standard'],
+\}
+let g:ale_fix_on_save = 1
