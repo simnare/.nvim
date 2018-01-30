@@ -42,6 +42,9 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 "Plug 'Shougo/vimshell.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'sgur/vim-editorconfig'
+Plug 'ctrlpvim/ctrlp.vim'
+
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 "End plugin list --------------------------------------------------------------
 call plug#end()
@@ -148,6 +151,9 @@ highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 autocmd WinEnter * match OverLength /\%81v.\+/
 
+set autowrite
+set autoread
+
 "I dislike folding.
 set nofoldenable
 
@@ -226,3 +232,13 @@ nnoremap <Leader>lf :Denite file_rec<CR>
 "Alias :W to :w
 cnoreabbrev W w
 
+" Vim-Go settings
+let g:go_fmt_command = "goimports"
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
+
+" Standard fix on js writes
+autocmd bufwritepost *.js silent !standard --fix %
