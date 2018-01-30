@@ -155,6 +155,8 @@ autocmd WinEnter * match OverLength /\%81v.\+/
 set autowrite
 set autoread
 set number
+set nowrap
+
 "I dislike folding.
 set nofoldenable
 
@@ -219,7 +221,7 @@ let g:vimshell_prompt_pattern = '^[a-z_-][a-z0-9_-]\{,31\} [~/][^$ ]* $ '
 if $TERM_PROGRAM == "iTerm.app"
   set termguicolors
   colorscheme one "solarized
-  set background=light
+  set background=dark
 else
   colorscheme material-theme
   set background=dark
