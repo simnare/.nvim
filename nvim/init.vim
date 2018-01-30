@@ -25,6 +25,8 @@ Plug 'stephpy/vim-yaml'
 "Plug 'spoqa/nirum.vim'
 "Plug 'pbrisbin/vim-syntax-shakespeare'
 "Plug 'elmcast/elm-vim'
+Plug 'digitaltoad/vim-pug'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 "Plug 'lifthrasiir/hangeul.vim'
 Plug 'vim-airline/vim-airline'
@@ -44,7 +46,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'sgur/vim-editorconfig'
 Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 
 "End plugin list --------------------------------------------------------------
 call plug#end()
