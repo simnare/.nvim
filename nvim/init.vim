@@ -252,3 +252,7 @@ let g:ale_fixers = {
 \   'javascript': ['standard'],
 \}
 let g:ale_fix_on_save = 1
+
+" Denite settings
+call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
+call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
