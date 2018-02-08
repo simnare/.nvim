@@ -108,6 +108,8 @@ au FileType gitcommit setl spell
 let g:ale_linters = {
 \    'haskell': ['stack-build', 'hlint'],
 \    'rust': ['cargo'],
+\    'javascript': ['standard'],
+\    'go': ['goimports'],
 \}
 
 "Python-related configurations.
