@@ -31,20 +31,17 @@ Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 "Plug 'lifthrasiir/hangeul.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
-Plug 'Shougo/denite.nvim'
-"Plug 'Shougo/vimfiler.vim'
 Plug 'simnalamburt/vim-mundo'
 Plug 'rhysd/committia.vim'
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 "Plug 'zchee/deoplete-jedi'
 Plug 'junegunn/vim-slash'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-"Plug 'Shougo/vimshell.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'sgur/vim-editorconfig'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
 
 
 "End plugin list --------------------------------------------------------------
@@ -105,13 +102,6 @@ au FileType make   setl ts=4 sw=4 sts=4 noet
 au FileType gitcommit setl spell
 
 "ALE-related configurations.
-let g:ale_linters = {
-\    'haskell': ['stack-build', 'hlint'],
-\    'rust': ['cargo'],
-\    'javascript': ['standard'],
-\    'go': ['goimports'],
-\}
-
 "Python-related configurations.
 "See also: https://github.com/achimnol/python-syntax#options-used-by-the-script
 let python_highlight_builtins = 1
@@ -202,7 +192,7 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 "let g:netrw_browse_split = 4
 "let g:netrw_altv = 1
-"let g:netrw_winsize = 25
+let g:netrw_winsize = 25
 "augroup ProjectDrawer
 "  autocmd!
 "  autocmd VimEnter * :Vexplore
@@ -231,10 +221,6 @@ endif
 
 let mapleader = ','
 
-" Denite keymaps
-nnoremap <Leader>lb :Denite buffer<CR>
-nnoremap <Leader>lf :Denite file_rec<CR>
-
 "Alias :W to :w
 cnoreabbrev W w
 
@@ -247,14 +233,27 @@ let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 
 " Standard fix on js writes
-"autocmd bufwritepost *.js silent !standard --fix %
+autocmd bufwritepost *.js silent !standard --fix %
 
 " Ale settings
+let g:ale_linters = {
+\    'haskell': ['stack-build', 'hlint'],
+\    'rust': ['cargo'],
+\    'javascript': ['standard'],
+\    'go': ['goimports'],
+\}
+
 let g:ale_fixers = {
 \   'javascript': ['standard'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = 'e'
+let g:ale_sign_warning = 'w'
 
-" Denite settings
-call denite#custom#map('insert', '<C-n>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-p>', '<denite:move_to_previous_line>', 'noremap')
+" Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
