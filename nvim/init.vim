@@ -27,6 +27,7 @@ Plug 'stephpy/vim-yaml'
 "Plug 'elmcast/elm-vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'leafgarland/typescript-vim'
 
 "Plug 'lifthrasiir/hangeul.vim'
 Plug 'vim-airline/vim-airline'
