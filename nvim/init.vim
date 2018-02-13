@@ -43,6 +43,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'sgur/vim-editorconfig'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree'
 
 
 "End plugin list --------------------------------------------------------------
@@ -258,3 +259,7 @@ let g:ale_sign_warning = 'w'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" NERDTree
+map <C-\> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
