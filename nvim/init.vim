@@ -234,9 +234,6 @@ let g:go_metalinter_autosave_enabled = ['vet', 'golint']
 let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 
-" Standard fix on js writes
-autocmd bufwritepost *.js silent !standard --fix %
-
 " Ale settings
 let g:ale_linters = {
 \    'haskell': ['stack-build', 'hlint'],
@@ -263,3 +260,10 @@ endif
 " NERDTree
 map <C-\> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" CtrlP
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules|vendor)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ }
