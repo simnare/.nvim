@@ -244,11 +244,11 @@ let g:ale_fixers = {
 \   'javascript': ['standard'],
 \}
 let g:ale_fix_on_save = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_error_str = 'ERROR'
+let g:ale_echo_msg_warning_str = 'WARN'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_sign_error = 'e'
-let g:ale_sign_warning = 'w'
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '✗'
 
 " Ack
 if executable('ag')
