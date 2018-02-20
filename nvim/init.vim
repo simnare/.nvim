@@ -22,12 +22,10 @@ Plug 'lepture/vim-jinja'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
-"Plug 'spoqa/nirum.vim'
-"Plug 'pbrisbin/vim-syntax-shakespeare'
-"Plug 'elmcast/elm-vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'leafgarland/typescript-vim'
+Plug 'digitaltoad/vim-pug'
 
 "Plug 'lifthrasiir/hangeul.vim'
 Plug 'vim-airline/vim-airline'
