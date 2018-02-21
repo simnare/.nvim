@@ -15,6 +15,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
 
 Plug 'godlygeek/tabular'
+Plug 'pangloss/vim-javascript'
 Plug 'achimnol/python-syntax'
 Plug 'plasticboy/vim-markdown'
 Plug 'othree/html5.vim'
