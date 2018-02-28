@@ -102,7 +102,6 @@ au FileType scss   setl ts=2 sw=2 sts=2
 au FileType make   setl ts=4 sw=4 sts=4 noet
 au FileType gitcommit setl spell
 
-"ALE-related configurations.
 "Python-related configurations.
 "See also: https://github.com/achimnol/python-syntax#options-used-by-the-script
 let python_highlight_builtins = 1
@@ -206,10 +205,6 @@ let g:deoplete#enable_at_startup = 1
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-"VimShell
-let g:vimshell_prompt_expr = '$USER . " " . fnamemodify(getcwd(), ":~") . " $ "'
-let g:vimshell_prompt_pattern = '^[a-z_-][a-z0-9_-]\{,31\} [~/][^$ ]* $ '
-
 "True colors
 if $TERM_PROGRAM == "iTerm.app"
   set termguicolors
@@ -228,9 +223,9 @@ cnoreabbrev Ack! Ack
 
 " Vim-Go settings
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_enabled = ['golint', 'errcheck']
+let g:go_metalinter_autosave = 0
+let g:go_metalinter_autosave_enabled = ['golint']
 let g:go_auto_type_info = 1
 let g:go_auto_sameids = 1
 
@@ -244,6 +239,7 @@ let g:ale_linters = {
 
 let g:ale_fixers = {
 \   'javascript': ['standard'],
+\   'go': ['goimports'],
 \}
 let g:ale_fix_on_save = 1
 let g:ale_echo_msg_error_str = 'ERROR'
