@@ -149,9 +149,6 @@ set autoread
 set number
 set nowrap
 
-"I dislike folding.
-set nofoldenable
-
 "I dislike visual bell as well.
 set novisualbell
 
