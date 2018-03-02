@@ -58,6 +58,13 @@ set expandtab
 set tabstop=4 shiftwidth=4 sts=4
 set autoindent nosmartindent
 
+" Folding
+set foldmethod=syntax
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+
 "set tab characters apart
 set listchars=tab:↹\
 
