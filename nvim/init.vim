@@ -59,6 +59,8 @@ set tabstop=4 shiftwidth=4 sts=4
 set autoindent nosmartindent
 
 " Folding
+set nofoldenable
+set foldlevel=2
 set foldmethod=syntax
 inoremap <F9> <C-O>za
 nnoremap <F9> za
@@ -238,7 +240,7 @@ let g:ale_linters = {
 \    'haskell': ['stack-build', 'hlint'],
 \    'rust': ['cargo'],
 \    'javascript': ['standard'],
-\    'go': ['goimports'],
+\    'go': ['goimports', 'gometalinter'],
 \}
 
 let g:ale_fixers = {
