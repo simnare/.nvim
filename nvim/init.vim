@@ -224,9 +224,11 @@ endif
 
 let mapleader = ','
 
-"Aliases
+" Aliases
 cnoreabbrev W w
 cnoreabbrev Ack! Ack
+" Mappings
+nnoremap <C-J> a<CR><Esc>k$
 
 " Vim-Go settings
 let g:go_fmt_command = "goimports"
